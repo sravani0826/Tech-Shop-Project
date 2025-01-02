@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register page in JavaScript</title>
+    <style>
+        .Eco{
+            margin-left: 35px;
+            font-size: 45px;
+        }
+        .layout{
+           margin-left: 450px;
+           padding: 20px;
+           position: absolute;
+           margin-top: -50px;
+           display: flex;
+           column-gap: 20px;
+        }
+        a{
+            text-decoration: none;
+            font-size: 20px;
+            color: black;
+        }
+        a:hover{
+            color:darkgrey;
+        }
+        .main{
+            margin-top: -10px;
+            background-color: lightslategrey;
+            height:90px;
+            width:1690px;
+            border-top: 100px;
+        }
+        .log{
+            height:35px;
+            width:65px;
+            font-size: 20px;
+            padding-left:30px;
+            border-radius: 5px;
+        }
+        .log:hover{
+            color: white;
+            background-color: black;
+        }
+        .regist{
+            height:35px;
+            width:80px;
+            font-size: 20px;
+            padding-left:35px ;
+            border-radius: 5px;
+        }
+        .regist:hover{
+            color:white;
+            background-color: black;
+        }
+        .cart{
+            height:35px;
+            width:55px;
+            font-size: 20px;
+            padding-left:30px ;
+            border-radius: 5px;
+        }
+        .cart:hover{
+            color:white;
+            background-color: black;
+        }
+        .zero{
+            position:absolute;
+            margin-left: 320px;
+            margin-top: 10px;
+        }
+        .box{
+            margin-left: 940px;
+            padding:20px;
+            position: absolute;
+            margin-top: -60px;
+            display:flex;
+            column-gap: 15px;
+        }
+        .log-img{
+            height:30px;
+            width:20px;
+            margin-left: 965px;
+            position: absolute;
+            margin-top: -35px;
+        }
+        .reg{
+            height:30px;
+            width:20px;
+            margin-left: 1085px;
+            position: absolute;
+            margin-top: -35px; 
+        }
+        .cart-img{
+            height:30px;
+            width:20px;
+            margin-left: 1220px;
+            position: absolute;
+            margin-top: -35px;
+        }
+        .rgs{
+            font-size: 55px;
+            text-align: center;
+            margin-top: -10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        input{
+            height:50px;
+            width:450px;
+            font-size: 20px;
+            border-radius:  6px;
+        }
+        p{
+            font-size: 25px;
+        }
+        .names{
+            margin-left:490px ;
+        }
+        .al{
+            color: aqua;
+        }
+        .sr{
+            margin-left: 600px;
+        }
+ </style>
+</head>
+<body>
+    <div class="main">
+        <h1 class="Eco">Ecommerce</h1>
+        <div class="layout">
+          <a href="">Home</a>
+          <a href="">Products</a>
+          <a href="">About</a>
+          <a href="">Contact</a>
+    </div>
+    <div class="box">
+        <input class="log" id="login" type="text" value="Login" href="">
+        <input class="regist" id="reg" type="text" value="Register" href="">
+        <input class="cart" id="cart" type="text" value="cart" href=""><span class="zero" id="strat">(0)</span>
+    </div>
+    <div class="images">
+        <img class="log-img" src="./login.png">
+        <img class="reg" src="./add.png">
+        <img class="cart-img" src="./trolley.png">
+     </div>
+     </div><br><br>
+     <h1 class="rgs">Register</h1>
+     <hr>
+     <div class="names">
+     <p>Full Name</p>
+     <input class="name" type="text" placeholder="Enter your name">
+     <p>Email address</p>
+     <input class="mail" type="text" placeholder="name@example.com">
+     <p>Password</p>
+     <input class="pwd" type="password" placeholder="Password">
+     <p>Already has an account?<span class="al">Login</span></p>
+     </div>
+     <p class="sr">Made With 🧡 by Sravani.k</p>
+</body>
+</html>
