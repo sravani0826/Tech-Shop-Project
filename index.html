@@ -240,7 +240,6 @@
         <script>
             let allData = [];
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
             // Fetch data from API
             fetch('https://fakestoreapi.com/products')
                 .then(response => response.json())
