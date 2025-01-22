@@ -103,15 +103,15 @@
         .cart-items-section {
             flex: 2;
             padding: 20px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-            border-radius: 8px;
+            border: 2px solid #ccc;
+            background-color: white;
+            border-radius: 7px;
             min-height: 300px;
         }
         .order-summary-section {
             flex: 1;
             padding: 20px;
-            border: 1px solid #ccc;
+            border: 2px solid #ccc;
             background-color: #fff;
             border-radius: 8px;
             display: none;
@@ -124,19 +124,19 @@
         }
         .shop {
             display: block;
-            width: 200px;
+            width: 400px;
             margin: 20px auto;
             padding: 10px;
-            font-size: 16px;
+            font-size: 20px;
             text-align: center;
-            background-color: #007BFF;
+            background-color: green;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
         .shop:hover {
-            background-color: #0056b3;
+            background-color: teal;
         }
         .cart-item {
             display: flex;
@@ -160,6 +160,8 @@
         .cart-item-actions button {
             margin: 0 5px;
             padding: 5px 10px;
+            font-size: 23px; 
+            cursor: pointer;  
         }
         .order-summary h3 {
             text-align: center;
@@ -185,23 +187,20 @@
            background-color: black;
            color: white;
         }
-        .checkout-btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        .checkout-btn:hover {
-            background-color: #45a049;
+        .rem{
+            background-color: red;
+            border-radius: 3px;
         }
         h2{
             font-size: 35px;
+        }
+        .sr{
+            margin-top: 25px;
+            margin-left: 550px;
+            font-size: 25px;
+        }
+        #heart{
+            color: red;
         }
     </style>
 </head>
@@ -210,20 +209,20 @@
         <h1 class="Eco">Ecommerce</h1>
         <div class="layout">
             <a href="./index.html">Home</a>
-            <a href="./Product-page.html">Products</a>
-            <a href="./About -page.html">About</a>
-            <a href="./Contactus-page.html">Contact</a>
+            <a href="./Product.html">Products</a>
+            <a href="./About.html">About</a>
+            <a href="./Contact.html">Contact</a>
         </div>
         <a href="./login.html"><button class="button1"><i class="fa-solid fa-right-to-bracket"></i>Login</button></a>
                     <a href="./register.html"><button class="button1"><i class="fa-solid fa-user-plus"></i>Register</button></a>
                     <a href="./cart.html"><button class="button1"><i class="fa-solid fa-cart-shopping"></i>Cart<span> (0)</span></button></a>
         <br><hr>
-    <div class="cart-container">
+       <div class="cart-container">
         <div class="cart-items-section">
             <h2 style="text-align: center;">Cart</h2><hr>
             <p class="empty-cart" id="empty-cart">Your cart is empty.</p>
             <div id="cart-items" style="display: none;"></div>
-            <button class="shop" id="continue-shopping" onclick="continueShopping()">← Continue Shopping</button>
+            <a href="./index.html"><button class="shop" id="continue-shopping" .>← Continue Shopping</button></a>
         </div>
         <div class="order-summary-section" id="order-summary">
             <h3>Order Summary</h3><hr>
@@ -239,9 +238,10 @@
                 <span>Total amount:</span>
                 <span id="total-price">$30.00</span>
             </div>
-            <button class="checkout-btn" onclick="checkout()">Go to Checkout</button>
+            <button class="shop" id="continue-shopping" onclick="Gotocheckout ()">Go to checkout</button>
         </div>
-    </div>
+      </div>
+        <p class="sr">Made With <i id="heart" class="fa-solid fa-heart text-danger"></i> by Sravani.k</p><br><br>
     <script>
         const loadCart = () => {
             return JSON.parse(localStorage.getItem('cart')) || [];
@@ -268,7 +268,6 @@
             continueShoppingButton.style.display = "none";
             cartItemsContainer.style.display = "block";
             orderSummary.style.display = "block";
-
             let cartHtml = cart.map((item, index) => {
                 const itemTotal = (item.price * item.quantity).toFixed(2);
                 return `
@@ -283,7 +282,7 @@
                             <span>${item.quantity}</span>
                             <button onclick="updateQuantity(${index}, 'decrement')">-</button>
                             <span class="cart-item-total">$${itemTotal}</span>
-                            <button onclick="removeItem(${index})">Remove</button>
+                            <button class="rem" onclick="removeItem(${index})">Remove</button>
                         </div>
                     </div>
                 `;
@@ -318,8 +317,8 @@
         const continueShopping = () => {
             window.location.href = "home.html";
         };
-        const checkout = () => {
-            alert("Proceeding to checkout");
+        const Gotocheckout = () => {
+            window.location.href = "home.html";
         };
         updateCartPage();
     </script>

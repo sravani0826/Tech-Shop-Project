@@ -206,9 +206,9 @@
         <h1 class="Eco">Ecommerce</h1>
         <div class="layout">
           <a href="./index.html">Home</a>
-          <a href="./Product-page.html">Products</a>
-          <a href="./About -page.html">About</a>
-          <a href="./Contactus-page.html">Contact</a>
+          <a href="./Product.html">Products</a>
+          <a href="./About.html">About</a>
+          <a href="./Contact.html">Contact</a>
         </div>
         <a href="./login.html"><button class="button1"><i class="fa-solid fa-right-to-bracket"></i>Login</button></a>
                     <a href="./register.html"><button class="button1"><i class="fa-solid fa-user-plus"></i>Register</button></a>
@@ -268,14 +268,14 @@
                 if (existingProductIndex !== -1) {
                     cart[existingProductIndex].quantity += 1;
                 } else {
-                    cart.push(product);
+                    cart.push({ id: productId, title: productTitle, price: productPrice, image: productImage, quantity: 1 });
                 }
                 localStorage.setItem('cart', JSON.stringify(cart));
                 updateCartCount();
             }
             function updateCartCount() {
                 let cartAmount = cart.reduce((total, item) => total + item.quantity, 0);
-                document.getElementById('strat').textContent = `(${cartAmount})`; // Fixing the count display
+                document.getElementById('strat').textContent = `(${cartAmount})`; 
             }
             function filterData(category, button) {
                 let filteredData;
