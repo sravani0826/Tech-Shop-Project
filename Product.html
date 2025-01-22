@@ -185,6 +185,14 @@
             background-color: orange;
             color: white;
         }
+        .sr{
+            margin-top: 25px;
+            margin-left: 550px;
+            font-size: 25px;
+        }
+        #heart{
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -209,6 +217,7 @@
             <button class="btn" id="electronics" onclick="filterData('electronics',this)">Electronics</button>
         </nav><br><br>
         <div id="container"></div>
+        <p class="sr">Made With <i id="heart" class="fa-solid fa-heart text-danger"></i> by Sravani.k</p><br><br>
         <script>
             let allData = [];
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
