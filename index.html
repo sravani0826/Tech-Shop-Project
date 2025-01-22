@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index page in JavaScript</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+       .Eco{
+            margin-left: 45px;
+            font-size: 45px;
+        }
+        .layout{
+            margin-left: 400px;
+            padding: 20px;
+            position: absolute;
+            margin-top: -50px;
+            display: flex;
+            column-gap: 40px;
+        }
+        a{
+            text-decoration: none;
+            font-size: 25px;
+            color: black;
+        }
+        a:hover{
+            color:darkgray;
+        }
+        .main{
+            margin-top: -10px;
+            background-color:lightslategrey;
+            height:90px;
+            width:1360px;
+            border-top: 100px;
+        }
+        .log, .regist, .cart {
+            height:35px;
+            font-size: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .log:hover, .regist:hover, .cart:hover {
+            color: white;
+            background-color: black;
+        }
+        .box {
+            margin-left: 940px;
+            padding: 20px;
+            position: absolute;
+            margin-top: -60px;
+            display: flex;
+            column-gap: 15px;
+        }
+        .log-img{
+            margin-left: 965px;
+            height:30px;
+            width:20px;
+            margin-top: -45px;
+        }
+        .reg {
+            margin-left: 1085px;
+            height:30px;
+            width:20px;
+            margin-top: -35px;
+        }
+        .cart-img {
+            margin-left: 1000px;
+            height:30px;
+            width:20px;
+            margin-top: -35px;
+        }
+        .abou{
+            font-size: 35px;
+            margin-left: 550px;
+        }
+        p{
+            font-size: 20px;
+            font-variant: initial;
+        }
+        h1{
+            margin-left: 550px;
+            font-size: 35px;
+        }
+        .prod{
+            height:200px;
+            padding:20px;
+            position: absolute;
+            margin-top: -30px;
+            display:flex;
+            column-gap: 30px;
+        }
+        .btn{
+            height:40px;
+            font-size: 20px;
+            margin-left: 20px;
+            border-radius: 5px;
+            position: relative;
+            left: 300px;
+            cursor: pointer;
+        }
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 10px;
+            height: fit-content;
+            justify-content: center;
+        } 
+        #container .productcard {
+            width: 300px;
+            height: 500px;
+            border: 1px solid;
+            border-radius: 10px;
+            padding: 10px;
+            background: white;
+        }
+        .productcard .image {
+            width: 100%;
+            height: 50%;
+            object-fit: contain;
+            justify-content: center;
+        }
+        .productcard h2 {
+            font-style: oblique;
+            text-align: center;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .productcard .dis {
+            color: black;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .productcard p {
+            color: black;
+            font-style: oblique;
+        }
+        .productcard h4 {
+            text-align: center;
+            color: black;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        #detail {
+            height: 50px;
+            border: none;
+            padding: 0px 20px;
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            justify-content: center;
+            border-radius: 6px;
+            margin-left: 20px;
+            margin-top: 0px;
+            align-items: flex-start;
+            cursor: pointer;
+        }
+        .season {
+            position: absolute;
+            margin-top: -250px;
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .new{
+            margin-left: 50px;
+        }
+        .vals{
+            margin-left: 50px;
+            font-size: 25px;
+        }
+        .sr {
+            margin-left: 560px;
+            margin-top: 190px;
+        }
+        #heart {
+            color: rgba(255, 0, 0, 0.685);
+        }
+        .active {
+            background-color: orange;
+            color: white;
+        }
+        .fa-solid{
+           padding-right: 8px;
+           padding-left: 5px;
+        }
+        .button1{
+           position: relative;
+           top: -40px;
+           left: 980px;
+           font-size: 15px;
+           border: 1px solid black;
+           border-radius: 5px;
+           height: 35px;
+           margin-left: 10px;
+           padding-right: 10px;
+        }
+        .button1:hover{
+           background-color: black;
+           color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1 class="Eco">Ecommerce</h1>
+        <div class="layout">
+          <a href="./index.html">Home</a>
+          <a href="./Product-page.html">Products</a>
+          <a href="./About -page.html">About</a>
+          <a href="./Contactus-page.html">Contact</a>
+        </div>
+        <a href="./login.html"><button class="button1"><i class="fa-solid fa-right-to-bracket"></i>Login</button></a>
+                    <a href="./register.html"><button class="button1"><i class="fa-solid fa-user-plus"></i>Register</button></a>
+                    <a href="./cart.html"><button class="button1"><i class="fa-solid fa-cart-shopping"></i>Cart<span> (0)</span></button></a>
+        <br><hr>
+        <img class="main1" src="./images/main.png (1).jpg" alt="main" width="100%" height="370px">
+        <div class="season">
+        <h1 class="new">New Season Arrivals</h1>
+        <p class="vals"> This is a wider card with supporting text below as a natural lead-in to additional content.This content is a little bit longer</p>
+        </div>
+        <h1 class="hom">Latest Products</h1><br><hr>
+        <nav><br>
+            <button class="btn" id="all" onclick="filterData('all',this)">All</button>
+            <button  class="btn" id="men" onclick="filterData('men\'s clothing',this)">Men's Clothing</button>
+            <button  class="btn" id="women" onclick="filterData('women\'s clothing',this)">Women's Clothing</button>
+            <button  class="btn" id="jewelery" onclick="filterData('jewelery',this)">Jewelry</button>
+            <button  class="btn" id="electronics" onclick="filterData('electronics',this)">Electronics</button>
+        </nav><br><br>
+        <div id="container"></div>
+
+        <script>
+            let allData = [];
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Fetch data from API
+            fetch('https://fakestoreapi.com/products')
+                .then(response => response.json())
+                .then((data) => {
+                    allData = data;
+                    displayProducts(allData);
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+            function displayProducts(products) {
+                const container = document.getElementById("container");
+                const containerCards = products.map((product) => {
+                    let {image, title, price, description} = product;
+                    return `
+                        <div class="productcard">
+                            <img class="image" src="${image}" alt="${title}">
+                            <h2>${title.substring(0, 20)}...</h2>
+                            <p class="dis">${description.substring(0, 90)}...</p><hr>
+                            <h4>$${price}</h4>
+                            <hr>
+                            <button id="detail">Details</button>
+                            <button id="detail" onclick="add_to_cart('${image}','${title}','${price}')">Add to Cart</button>
+                        </div>
+                    `;
+                });
+                container.innerHTML = containerCards.join("");
+                updateCartCount();
+            }
+            function add_to_cart(image, title, price) {
+                const product = { image, title, price, quantity: 1 };
+                let existingProductIndex = cart.findIndex(item => item.title === title);
+                if (existingProductIndex !== -1) {
+                    cart[existingProductIndex].quantity += 1;
+                } else {
+                    cart.push(product);
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartCount();
+            }
+            function updateCartCount() {
+                let cartAmount = cart.reduce((total, item) => total + item.quantity, 0);
+                document.getElementById('strat').textContent = `(${cartAmount})`; // Fixing the count display
+            }
+            function filterData(category, button) {
+                let filteredData;
+                if (category === "all") {
+                    filteredData = allData; 
+                } else {
+                    filteredData = allData.filter((item) => item.category.toLowerCase() === category.toLowerCase());
+                }
+                displayProducts(filteredData);
+                const buttons = document.querySelectorAll(".btn");
+                buttons.forEach((btn) => {
+                    btn.classList.remove("active");
+                    btn.style.backgroundColor = "white";
+                    btn.style.color = "black";
+                });
+                button.classList.add("active");
+                button.style.backgroundColor = "orange";
+                button.style.color = "white";
+            }
+        </script>
+    </div>
+</body>
+</html>

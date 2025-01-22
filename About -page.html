@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us in JavaScript</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .Eco{
             margin-left: 35px;
@@ -29,7 +30,7 @@
             margin-top: -10px;
             background-color:lightslategrey;
             height:90px;
-            width:1690px;
+            width:1350px;
             border-top: 100px;
         }
         .log{
@@ -70,13 +71,20 @@
             margin-left: 320px;
             margin-top: 10px;
         }
-        .box{
-            margin-left: 940px;
-            padding:20px;
-            position: absolute;
-            margin-top: -60px;
-            display:flex;
-            column-gap: 15px;
+        .button1{
+           position: relative;
+           top: -50px;
+           left: 1020px;
+           font-size: 15px;
+           border: 1px solid black;
+           border-radius: 5px;
+           height: 35px;
+           margin-left: 10px;
+           padding-right: 10px;
+        }
+        .button1:hover{
+           background-color: black;
+           color: white;
         }
         .log-img{
             height:30px;
@@ -106,6 +114,8 @@
         p{
             font-size: 20px;
             font-variant: initial;
+            text-align: center;
+            align-content: center;
         }
         h2{
             margin-left: 550px;
@@ -120,8 +130,10 @@
             column-gap: 30px;
         }
         .sr{
-            margin-left: 560px;
             margin-top: 190px;
+        }
+        #heart{
+            color: red;
         }
     </style>
 </head>
@@ -134,16 +146,10 @@
           <a href="">About</a>
           <a href="">Contact</a>
     </div>
-    <div class="box">
-        <input class="log" id="login" type="text" value="Login" href="">
-        <input class="regist" id="reg" type="text" value="Register" href="">
-        <input class="cart" id="cart" type="text" value="cart" href=""><span class="zero" id="strat">(0)</span>
-    </div>
-    <div class="images">
-        <img class="log-img" src="./images/login.png">
-        <img class="reg" src="./images/add.png">
-        <img class="cart-img" src="./images/trolley.png">
-     </div><br>
+    <a href="./login.html"><button class="button1"><i class="fa-solid fa-right-to-bracket"></i>Login</button></a>
+                    <a href="./register.html"><button class="button1"><i class="fa-solid fa-user-plus"></i>Register</button></a>
+                    <a href="./cart.html"><button class="button1"><i class="fa-solid fa-cart-shopping"></i>Cart<span> (0)</span></button></a>
+        <br><hr>
      <h1 class="abou">About Us</h1>
      <hr>
      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium deserunt aspernatur amet corrupti at iure eos, voluptate sequi quos cumque suscipit dignissimos<br>reprehenderit vitae non doloribus ab culpa laboriosam necessitatibus?
@@ -158,6 +164,6 @@
      <img class="three" src="./images/pexels-photo-1927259.webp">
      <img class="four" src="./images/pexels-photo-356056.jpeg">
      </div><br><br>
-     <p class="sr">Made With 🧡by Sravani.k</p><br><br>
+     <p class="sr">Made With <i id="heart" class="fa-solid fa-heart text-danger"></i> by Sravani.k</p><br><br>
 </body>
 </html>

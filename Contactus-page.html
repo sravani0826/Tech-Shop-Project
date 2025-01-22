@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us in JavaScript</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .Eco{
-            margin-left: 35px;
-            font-size: 40px;
+            margin-left: 55px;
+            font-size: 50px;
         }
         .layout{
-           margin-left: 400px;
-           padding: 20px;
+           margin-left: 450px;
+           
            position: absolute;
            margin-top: -50px;
            display: flex;
-           column-gap: 40px;
+           column-gap: 50px;
         }
         a{
             text-decoration: none;
@@ -29,41 +30,8 @@
             margin-top: -10px;
             background-color: lightslategray;
             height:90px;
-            width:1690px;
+            width:1350px;
             border-top: 100px;
-        }
-        .log{
-            height:35px;
-            width:65px;
-            font-size: 20px;
-            padding-left:30px;
-            border-radius: 5px;
-        }
-        .log:hover{
-            color: white;
-            background-color: black;
-        }
-        .regist{
-            height:35px;
-            width:80px;
-            font-size: 20px;
-            padding-left:35px ;
-            border-radius: 5px;
-        }
-        .regist:hover{
-            color:white;
-            background-color: black;
-        }
-        .cart{
-            height:35px;
-            width:55px;
-            font-size: 20px;
-            padding-left:30px ;
-            border-radius: 5px;
-        }
-        .cart:hover{
-            color:white;
-            background-color: black;
         }
         .zero{
             position:absolute;
@@ -71,33 +39,22 @@
             margin-top: 10px;
         }
         .box{
-            margin-left: 940px;
-            padding:20px;
             position: absolute;
-            margin-top: -60px;
             display:flex;
-            column-gap: 15px;
+            column-gap: 90px;
         }
-        .log-img{
-            height:30px;
-            width:20px;
+        .button{
+            width:80px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 550;
             margin-left: 965px;
             position: absolute;
-            margin-top: -35px;
+            margin-top: -55px;
         }
-        .reg{
-            height:30px;
-            width:20px;
-            margin-left: 1085px;
-            position: absolute;
-            margin-top: -35px; 
-        }
-        .cart-img{
-            height:30px;
-            width:20px;
-            margin-left: 1220px;
-            position: absolute;
-            margin-top: -35px;
+        .button:hover{
+            background-color: black;
+            color:white;
         }
         .cont{
             font-size: 50px;
@@ -135,13 +92,27 @@
             background-color: dimgray;
             color: aliceblue;
         }
-        .send:hover{
-            background-color:black;
+        .button1{
+           position: relative;
+           top: -40px;
+           left: 980px;
+           font-size: 15px;
+           border: 1px solid black;
+           border-radius: 5px;
+           height: 35px;
+           margin-left: 10px;
+           padding-right: 10px;
+        }
+        .button1:hover{
+           background-color: black;
+           color: white;
         }
         .sr{
             margin-left: 570px;
         }
-
+        #heart{
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -153,17 +124,10 @@
           <a href="">About</a>
           <a href="">Contact</a>
     </div>
-    <div class="box">
-        <input class="log" id="login" type="text" value="Login" href="">
-        <input class="regist" id="reg" type="text" value="Register" href="">
-        <input class="cart" id="cart" type="text" value="cart" href=""><span class="zero" id="strat">(0)</span>
-    </div>
-    <div class="images">
-        <img class="log-img" src="./images/login.png">
-        <img class="reg" src="./images/add.png">
-        <img class="cart-img" src="./images/trolley.png">
-     </div>
-     </div><br><br>
+    <a href="./login.html"><button class="button1"><i class="fa-solid fa-right-to-bracket"></i>Login</button></a>
+                    <a href="./register.html"><button class="button1"><i class="fa-solid fa-user-plus"></i>Register</button></a>
+                    <a href="./cart.html"><button class="button1"><i class="fa-solid fa-cart-shopping"></i>Cart<span> (0)</span></button></a>
+        <br><hr>
      <h1 class="cont">Contact Us</h1>
      <hr>
      <div class="box1">
@@ -175,7 +139,7 @@
         <input class="msg" type="chatbox" placeholder="Enter your message">
         </div><br>
         <input class="send" type="button" value="send">
-        <p class="sr">Made With 🧡 by Sravani.k</p><br><br>
+        <p class="sr">Made With <i id="heart" class="fa-solid fa-heart text-danger"></i> by Sravani.k</p><br><br>
 
 </body>
 </html>
