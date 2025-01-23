@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart page in JavaScript</title>
+    <title>Cart Page in JavaScript</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .Eco {
@@ -33,64 +33,23 @@
             width: 1350px;
             border-top: 100px;
         }
-        .log {
-            height: 35px;
-            width: 65px;
-            font-size: 20px;
-            padding-left: 30px;
+        .button1 {
+            position: relative;
+            top: -50px;
+            left: 1030px;
+            font-size: 15px;
+            border: 1px solid black;
             border-radius: 5px;
-        }
-        .log:hover {
-            color: white;
-            background-color: black;
-        }
-        .regist {
             height: 35px;
-            width: 80px;
-            font-size: 20px;
-            padding-left: 35px;
-            border-radius: 5px;
+            margin-left: 10px;
+            padding-right: 10px;
         }
-        .regist:hover {
-            color: white;
+        .button1:hover {
             background-color: black;
-        }
-        .cart {
-            height: 35px;
-            width: 55px;
-            font-size: 20px;
-            padding-left: 30px;
-            border-radius: 5px;
-        }
-        .cart:hover {
             color: white;
-            background-color: black;
         }
-        .zero {
-            position: absolute;
-            margin-left: 320px;
-            margin-top: 10px;
-        }
-        .log-img {
-            height: 30px;
-            width: 20px;
-            margin-left: 985px;
-            position: absolute;
-            margin-top: -37px;
-        }
-        .reg {
-            height: 30px;
-            width: 20px;
-            margin-left: 1085px;
-            position: absolute;
-            margin-top: -37px;
-        }
-        .cart-img {
-            height: 30px;
-            width: 20px;
-            margin-left: 1220px;
-            position: absolute;
-            margin-top: -37px;
+        #cart-amount {
+            font-weight: bold;
         }
         .cart-container {
             display: flex;
@@ -153,10 +112,6 @@
         .cart-item-details {
             flex: 1;
         }
-        .cart-item-actions {
-            display: flex;
-            align-items: center;
-        }
         .cart-item-actions button {
             margin: 0 5px;
             padding: 5px 10px;
@@ -166,41 +121,6 @@
         .order-summary h3 {
             text-align: center;
             margin-bottom: 20px;
-        }
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            margin: 10px 0;
-        }
-        .button1{
-           position: relative;
-           top: -50px;
-           left: 1030px;
-           font-size: 15px;
-           border: 1px solid black;
-           border-radius: 5px;
-           height: 35px;
-           margin-left: 10px;
-           padding-right: 10px;
-        }
-        .button1:hover{
-           background-color: black;
-           color: white;
-        }
-        .rem{
-            background-color: red;
-            border-radius: 3px;
-        }
-        h2{
-            font-size: 35px;
-        }
-        .sr{
-            margin-top: 25px;
-            margin-left: 550px;
-            font-size: 25px;
-        }
-        #heart{
-            color: red;
         }
     </style>
 </head>
@@ -213,64 +133,64 @@
             <a href="./About.html">About</a>
             <a href="./Contact.html">Contact</a>
         </div>
-        <a href="./login.html"><button class="button1"><i class="fa-solid fa-right-to-bracket"></i>Login</button></a>
-                    <a href="./register.html"><button class="button1"><i class="fa-solid fa-user-plus"></i>Register</button></a>
-                    <a href="./cart.html"><button class="button1"><i class="fa-solid fa-cart-shopping"></i>Cart<span> (0)</span></button></a>
+        <a href="./login.html"><button class="button1"><i class="fa-solid fa-right-to-bracket"></i> Login</button></a>
+        <a href="./register.html"><button class="button1"><i class="fa-solid fa-user-plus"></i> Register</button></a>
+        <a href="./cart.html">
+            <button class="button1">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Cart <span id="cart-amount">(0)</span>
+            </button>
+        </a>
         <br><hr>
-       <div class="cart-container">
-        <div class="cart-items-section">
-            <h2 style="text-align: center;">Cart</h2><hr>
-            <p class="empty-cart" id="empty-cart">Your cart is empty.</p>
-            <div id="cart-items" style="display: none;"></div>
-            <a href="./index.html"><button class="shop" id="continue-shopping" .>← Continue Shopping</button></a>
+        <div class="cart-container">
+            <div class="cart-items-section">
+                <h2 style="text-align: center;">Cart</h2><hr>
+                <p class="empty-cart" id="empty-cart">Your cart is empty.</p>
+                <div id="cart-items" style="display: none;"></div>
+                <a href="./index.html"><button class="shop">← Continue Shopping</button></a>
+            </div>
+            <div class="order-summary-section" id="order-summary">
+                <h3>Order Summary</h3><hr>
+                <div class="summary-row">
+                    <span>Product Price:</span>
+                    <span id="product-price">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping:</span>
+                    <span>$30.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Total amount:</span>
+                    <span id="total-price">$30.00</span>
+                </div>
+                <button class="shop" onclick="Gotocheckout()">Go to Checkout</button>
+            </div>
         </div>
-        <div class="order-summary-section" id="order-summary">
-            <h3>Order Summary</h3><hr>
-            <div class="summary-row">
-                <span>Product Price:</span>
-                <span id="product-price">$0.00</span>
-            </div>
-            <div class="summary-row">
-                <span>Shipping:</span>
-                <span>$30.00</span>
-            </div>
-            <div class="summary-row">
-                <span>Total amount:</span>
-                <span id="total-price">$30.00</span>
-            </div>
-            <button class="shop" id="continue-shopping" onclick="Gotocheckout ()">Go to checkout</button>
-        </div>
-      </div>
-        <p class="sr">Made With <i id="heart" class="fa-solid fa-heart text-danger"></i> by Sravani.k</p><br><br>
-    <script>
-        const loadCart = () => {
-            return JSON.parse(localStorage.getItem('cart')) || [];
-        };
-        const updateCartCount = () => {
-            const cart = loadCart();
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            document.getElementById("cart_amount").textContent = `(${totalItems})`;
-        };
-        const updateCartPage = () => {
-            const cart = loadCart();
-            const cartItemsContainer = document.getElementById("cart-items");
-            const emptyCartMessage = document.getElementById("empty-cart");
-            const continueShoppingButton = document.getElementById("continue-shopping");
-            const orderSummary = document.getElementById("order-summary");
-            if (cart.length === 0) {
-                cartItemsContainer.style.display = "none";
-                emptyCartMessage.style.display = "block";
-                continueShoppingButton.style.display = "block";
-                orderSummary.style.display = "none";
-                return;
-            }
-            emptyCartMessage.style.display = "none";
-            continueShoppingButton.style.display = "none";
-            cartItemsContainer.style.display = "block";
-            orderSummary.style.display = "block";
-            let cartHtml = cart.map((item, index) => {
-                const itemTotal = (item.price * item.quantity).toFixed(2);
-                return `
+        <script>
+            const loadCart = () => JSON.parse(localStorage.getItem('cart')) || [];
+            const updateCartDisplay = () => {
+                const cartButton = document.querySelector('.button1 span');
+                const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+                cartButton.textContent = `(${cartCount})`;
+            };
+            const updateCartPage = () => {
+                const cart = loadCart();
+                const cartItemsContainer = document.getElementById("cart-items");
+                const emptyCartMessage = document.getElementById("empty-cart");
+                const orderSummary = document.getElementById("order-summary");
+
+                if (cart.length === 0) {
+                    cartItemsContainer.style.display = "none";
+                    emptyCartMessage.style.display = "block";
+                    orderSummary.style.display = "none";
+                    return;
+                }
+
+                emptyCartMessage.style.display = "none";
+                cartItemsContainer.style.display = "block";
+                orderSummary.style.display = "block";
+
+                const cartHtml = cart.map((item, index) => `
                     <div class="cart-item">
                         <img src="${item.image}" alt="${item.title}">
                         <div class="cart-item-details">
@@ -281,46 +201,49 @@
                             <button onclick="updateQuantity(${index}, 'increment')">+</button>
                             <span>${item.quantity}</span>
                             <button onclick="updateQuantity(${index}, 'decrement')">-</button>
-                            <span class="cart-item-total">$${itemTotal}</span>
-                            <button class="rem" onclick="removeItem(${index})">Remove</button>
+                            <span class="cart-item-total">$${(item.price * item.quantity).toFixed(2)}</span>
+                            <button onclick="removeItem(${index})">Remove</button>
                         </div>
                     </div>
-                `;
-            }).join("");
-            cartItemsContainer.innerHTML = cartHtml;
-            updateTotalPrice();
-            updateCartCount();
-        };
-        const updateQuantity = (index, action) => {
-            let cart = loadCart();
-            if (action === 'increment') {
-                cart[index].quantity += 1;
-            } else if (action === 'decrement' && cart[index].quantity > 1) {
-                cart[index].quantity -= 1;
-            }
-            localStorage.setItem('cart', JSON.stringify(cart));
-            updateCartPage();
-        };
-        const removeItem = (index) => {
-            let cart = loadCart();
-            cart.splice(index, 1);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            updateCartPage();
-        };
-        const updateTotalPrice = () => {
-            let cart = loadCart();
-            let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-            let shipping = 30;
-            document.getElementById("product-price").textContent = `$${total.toFixed(2)}`;
-            document.getElementById("total-price").textContent = `$${(total + shipping).toFixed(2)}`;
-        };
-        const continueShopping = () => {
-            window.location.href = "home.html";
-        };
-        const Gotocheckout = () => {
-            window.location.href = "home.html";
-        };
-        updateCartPage();
-    </script>
-</body>
+                `).join("");
+
+                cartItemsContainer.innerHTML = cartHtml;
+                updateTotalPrice();
+                updateCartCount();
+            };
+
+            const updateQuantity = (index, action) => {
+                const cart = loadCart();
+                if (action === "increment") cart[index].quantity += 1;
+                if (action === "decrement" && cart[index].quantity > 1) cart[index].quantity -= 1;
+
+                localStorage.setItem("cart", JSON.stringify(cart));
+                updateCartPage();
+            };
+
+            const removeItem = (index) => {
+                const cart = loadCart();
+                cart.splice(index, 1);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                updateCartPage();
+            };
+
+            const updateTotalPrice = () => {
+                const cart = loadCart();
+                const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+                const shipping = 30;
+                document.getElementById("product-price").textContent = `$${total.toFixed(2)}`;
+                document.getElementById("total-price").textContent = `$${(total + shipping).toFixed(2)}`;
+            };
+
+            const Gotocheckout = () => {
+                window.location.href = "checkout.html";
+            };
+
+            document.addEventListener("DOMContentLoaded", () => {
+                updateCartCount();
+                updateCartPage();
+            });
+        </script>
+    </body>
 </html>
