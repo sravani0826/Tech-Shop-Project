@@ -249,12 +249,10 @@
             <button class="btn" id="electronics" onclick="filterData('electronics', this)">Electronics</button>
         </nav><br><br>
         <div id="container"></div>
-        <p class="sr">Made With <i id="heart" class="fa-solid fa-heart text-danger"></i> by Sravani.k</p><br><br>
+        <p class="sr">Made With <i id="heart" class="fa-solid fa-heart text-danger"></i>by <u>Kuraku Sravani</u></p><br><br>
         <script>
             let allData = [];
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-            // Update cart count display on the cart button
             const updateCartDisplay = () => {
                 const cartButton = document.querySelector('.button1 span');
                 const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
