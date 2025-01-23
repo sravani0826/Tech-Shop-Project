@@ -6,7 +6,6 @@
     <title>Cart Page in JavaScript</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        /* Styles for cart page */
         .Eco {
             margin-left: 45px;
             font-size: 45px;
@@ -61,10 +60,11 @@
         }
         .cart-items-section {
             flex: 2;
-            padding: 20px;
+            padding: 8px;
             border: 2px solid #ccc;
             background-color: white;
             border-radius: 7px;
+            font-size: 35px;
             min-height: 300px;
         }
         .order-summary-section {
@@ -166,8 +166,8 @@
                 <button class="shop" onclick="Gotocheckout()">Go to Checkout</button>
             </div>
         </div>
-        <script>
-            const loadCart = () => JSON.parse(localStorage.getItem('cart')) || [];
+    <script>
+        const loadCart = () => JSON.parse(localStorage.getItem('cart')) || [];
 
 const saveCart = (cart) => {
     localStorage.setItem('cart', JSON.stringify(cart));
